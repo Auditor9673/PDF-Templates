@@ -13,7 +13,15 @@ for index, row in df.iterrows():
     pdf.set_text_color(100, 100, 100)
     pdf.cell(w=0, h=12, txt=row["Topic"], align="L",
             ln=1  )
-    pdf.line(10, 21, 200, 21)
+    
+    y = 25
+    pdf.line(10, y, 200, y)
+    
+    count = 1
+    while count < 27:
+        y = y + 10
+        pdf.line(10, y, 200, y)
+        count = count + 1
 
     pdf.ln(265)
 
@@ -23,6 +31,15 @@ for index, row in df.iterrows():
 
     for i in range(row["Pages"] - 1):
         pdf.add_page()
+
+        y = 25
+        pdf.line(10, y, 200, y)
+        
+        count = 1
+        while count < 27:
+                y = y + 10
+                pdf.line(10, y, 200, y)
+                count = count + 1
         
         pdf.ln(277)
 
